@@ -9,7 +9,7 @@
       background-color: #35f527; 
     }
     .card {
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
     }
     .card:hover {
       transform: scale(1.05);
@@ -22,6 +22,14 @@
       display: none;
     }
     .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+     p{
+      display: none;
+      transition: display 0.5s ease-in-out;
+      transition-delay: 1s;
+    }
+    .card:hover p{
       display: block;
     }
   </style>
@@ -46,7 +54,7 @@
 </head>
 <body>
       <div class="relative">
-        <h1 class="text-3xl font-bold text-center pt-4 text-gray-800">Animated Memories</h1>
+        <h1 class="text-3xl font-bold text-center pt-4 text-gray-800">Cartoon Flashback</h1>
         <div class="dropdown absolute top-0 right-20 mt-4 mr-4">
           <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded absolute">
             <span>&#x2630;</span> Theme
@@ -73,8 +81,8 @@
         <p class="text-gray-700 text-base">One of my favorite mischievous characters. This clip will never grow old. Watch and relive the timeless hilarity that Shinchan brings.  </p>
       </div>
       <div class="px-8 py-4 ">
-        <a href="https://www.youtube.com/watch?v=rDgMCmtdPRo"> <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 ">#clip1</span></a>
-       <a href="https://www.youtube.com/watch?v=vpi0uP80q5w"> <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#clip2</span></a>
+        <a href="https://www.youtube.com/watch?v=rDgMCmtdPRo"> <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#clip1</span></a>
+       <a href="https://www.youtube.com/watch?v=vpi0uP80q5w"> <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 ">#clip2</span></a>
         <button class="pl-5"><a href="https://www.linkedin.com/in/sinan-31303125a"><i class="fab fa-linkedin text-3xl"></i></a></button>
         <button class="pl-5"><a href="https://github.com/Sinan-07"><i class="fab fa-github text-3xl"></i></a></button>
       </div>
