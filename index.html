@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My card component</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.17/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      background-color: #35f527; 
+    }
+    .card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 4px 8px 0px rgba(248, 9, 9, 0.5);
+    }
+    .active-card {
+      background-color: #28a158;
+    }
+    .dropdown-menu {
+      display: none;
+    }
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+  </style>
+  <script>
+    const sand_blue= "linear-gradient(to right, #3E5151, #DECBA4)";
+    const second= "linear-gradient(to right, #6A9113, #141517)";
+    const third = "linear-gradient(to right, #134E5E, #71B280)";
+    function changeBackgroundColor(color) {
+      document.body.style.backgroundImage = color;
+    }
+    function handleCardHover(cardId) {
+      // Add 'active-card' class to the card
+      var card = document.getElementById(cardId);
+      card.classList.add('active-card');
+    }
+    function handleCardMouseLeave(cardId) {
+      // Remove 'active-card' class from the card
+      var card = document.getElementById(cardId);
+      card.classList.remove('active-card');
+    }
+  </script>
+</head>
+<body>
+      <div class="relative">
+        <h1 class="text-3xl font-bold text-center pt-4 text-gray-800">Animated Memories</h1>
+        <div class="dropdown absolute top-0 right-20 mt-4 mr-4">
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded absolute">
+            <span>&#x2630;</span> Theme
+          </button>
+          <div class="dropdown-menu absolute top-0 right-0 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+            <button class="block px-4 py-2 text-gray-800 hover:bg-red-200 w-full text-left"
+                    onclick="changeBackgroundColor(sand_blue)">Sand-Blue</button>
+            <button class="block px-4 py-2 text-gray-800 hover:bg-yellow-200 w-full text-left"
+                    onclick="changeBackgroundColor(second)">Green-Dark</button>
+            <button class="block px-4 py-2 text-gray-800 hover:bg-green-200 w-full text-left"
+                    onclick="changeBackgroundColor(third)">Blue-Dusk</button>
+          </div>
+        </div>
+      </div>
+
+<div class="block mb-2">
+  <div class="grid grid-cols-1 justify-center justify-items-center items-center h-screen lg:flex ">
+  
+    <div id="card1" class="max-w-xs rounded overflow-hidden shadow-lg bg-green-400 card  lg:mr-10" 
+         onmouseover="handleCardHover('card1')" onmouseout="handleCardMouseLeave('card1')">
+      <img class="w-full h-48 object-cover rounded-lg p-1" src="image1.jpg" alt="Card Image">
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2">Shinchan</div>
+        <p class="text-gray-700 text-base">One of my favorite mischievous characters. This clip will never grow old. Watch and relive the timeless hilarity that Shinchan brings.  </p>
+      </div>
+      <div class="px-8 py-4 ">
+        <a href="https://www.youtube.com/watch?v=rDgMCmtdPRo"> <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 ">#clip1</span></a>
+       <a href="https://www.youtube.com/watch?v=vpi0uP80q5w"> <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#clip2</span></a>
+        <button class="pl-5"><a href="https://www.linkedin.com/in/sinan-31303125a"><i class="fab fa-linkedin text-3xl"></i></a></button>
+        <button class="pl-5"><a href="https://github.com/Sinan-07"><i class="fab fa-github text-3xl"></i></a></button>
+      </div>
+    </div>
+
+    <div id="card2" class="max-w-xs rounded overflow-hidden shadow-lg bg-green-400 card lg:mr-10" 
+         onmouseover="handleCardHover('card2')" onmouseout="handleCardMouseLeave('card2')">
+      <img class="w-full h-48 object-cover rounded-lg p-1" src="image3.jpeg" alt="Card Image">
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2">Doremoon</div>
+        <p class="text-gray-700 text-base">The movie that touched my heart. Anyone who watched this during their childhood can truly relate. The second clip gives me goosebumps. </p>
+      </div>
+      <div class="px-6 py-4">
+       <a href="https://www.youtube.com/watch?v=hgY0EzxBk3Y"><span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#clip1</span></a>
+        <a href="https://www.youtube.com/shorts/7gBVLyv-1ro"><span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">#clip2</span></a>
+        <button class="pl-5"><a href="https://www.linkedin.com/in/sinan-31303125a"><i class="fab fa-linkedin text-3xl"></i></a></button>
+        <button class="pl-5"><a href="https://github.com/Sinan-07"><i class="fab fa-github text-3xl"></i></a></button>      </div>
+    </div>
+
+    <div id="card3" class="max-w-xs rounded overflow-hidden shadow-lg bg-green-400 card lg:mr-10" 
+         onmouseover="handleCardHover('card3')" onmouseout="handleCardMouseLeave('card3')">
+      <img class="w-full h-48 object-cover rounded-lg p-1 " src="image2.jpeg" alt="Card Image">
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2">Pokemon</div>
+        <p class="text-gray-700 text-base">Every time Pikachu cries for Ash I tear up. This clip is good at making even a grownup cry their eyes out and every pokemon fan can feel this.</p>
+      </div>
+      <div class="px-6 py-4">
+       <a href="https://www.youtube.com/watch?v=6W4BBG-s--s"> <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#clip1</span></a>
+       <a href="https://www.youtube.com/watch?v=3Ta6DiQ1jig"><span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">#clip2</span></a>
+       <button class="pl-5"><a href="https://www.linkedin.com/in/sinan-31303125a"><i class="fab fa-linkedin text-3xl"></i></a></button>
+        <button class="pl-5"><a href="https://github.com/Sinan-07"><i class="fab fa-github text-3xl"></i></a></button>      </div>
+      </div>
+  </div>
+  </div>
+</body>
+</html>
